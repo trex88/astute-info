@@ -1,6 +1,11 @@
-// import "./globals.css";
+import "./globals.css";
+import NavBar from "./_navBar/NavBar";
+import { Roboto } from "next/font/google";
+import Footer from "./_components/Footer";
 
-import Header from "./components/Header";
+const roboto = Roboto({
+  subsets: ["latin"],
+});
 
 export const metadata = {
   title: "AstuteInfo",
@@ -8,11 +13,11 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body>
-        <Header />
+    <html lang="en" className={roboto.className}>
+      <body className="grid">
+        <NavBar />
         <main>{children}</main>
-        <footer>Footer</footer>
+        <Footer />
       </body>
     </html>
   );
