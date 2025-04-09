@@ -470,16 +470,12 @@ export default function HomePage() {
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto">
             <div className="relative">
-              <div className="absolute -top-10 left-0 text-9xl text-primary opacity-20">
-                "
-              </div>
-              <div className="absolute -bottom-10 right-0 text-9xl text-primary opacity-20">
-                "
-              </div>
+              <div className="absolute -top-10 left-0 text-9xl text-primary opacity-20"></div>
+              <div className="absolute -bottom-10 right-0 text-9xl text-primary opacity-20"></div>
               <blockquote className="text-2xl md:text-3xl font-light italic px-10 text-center">
-                "AI is not about replicating human intelligence, but about
+                {`"AI is not about replicating human intelligence, but about
                 augmenting it, allowing us to transcend our limitations and
-                unlock new possibilities we never thought possible"
+                unlock new possibilities we never thought possible"`}
               </blockquote>
             </div>
             <div className="mt-10 flex items-center justify-center">

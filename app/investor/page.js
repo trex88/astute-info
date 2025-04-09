@@ -84,9 +84,9 @@ function Page() {
               <div className="text-2xl text-neutral-700 space-y-5">
                 <p>
                   A Journey of Innovation and Impact: Imagine a world where
-                  artificial intelligence isn't just a concept but a powerful
-                  force driving innovation across industries. Welcome to
-                  AstuteInfo, where we're transforming the landscape of
+                  artificial intelligence {`isn't`} just a concept but a
+                  powerful force driving innovation across industries. Welcome
+                  to AstuteInfo, where{` we're`} transforming the landscape of
                   financial technologies with our cutting-edge AI solutions.
                 </p>
                 <p>
@@ -221,7 +221,7 @@ function Page() {
                 <CardTitle>Innovation</CardTitle>
               </CardHeader>
               <CardContent>
-                We're at the forefront of innovation, constantly pushing the
+                {`We're`} at the forefront of innovation, constantly pushing the
                 boundaries of what is possible with secure and high-performance
                 AI technology. Our commitment to innovation ensures that we stay
                 ahead of the curve and continue to deliver cutting-edge
@@ -273,9 +273,9 @@ function Page() {
                 Join us on this journey
               </h2>
               <p className="text-2xl text-neutral-700">
-                AstuteInfo Corporation is not just a company—it's a catalyst for
-                change. With our innovative AI solutions, dedicated team, and
-                visionary leadership, we're shaping the future of AI
+                AstuteInfo Corporation is not just a {`company—it's`} a catalyst
+                for change. With our innovative AI solutions, dedicated team,
+                and visionary leadership, {`we're`} shaping the future of AI
                 technologies and unlocking new possibilities for growth and
                 impact.
               </p>
@@ -315,8 +315,8 @@ function Page() {
                 Contact our Investor Relations Team
               </h2>
               <p className="text-2xl text-neutral-700">
-                We're here to answer your questions and provide more information
-                about investment opportunities.
+                {`We're`} here to answer your questions and provide more
+                information about investment opportunities.
               </p>
             </div>
           </div>

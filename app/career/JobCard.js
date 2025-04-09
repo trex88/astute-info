@@ -27,11 +27,15 @@ function JobCard({ jobInfo }) {
 
   const JobContext = createContext();
 
-  useEffect(function () {
-    if (department.toLowerCase() === "customer service") setColor("primary");
-    if (department.toLowerCase() === "customer support") setColor("secondary");
-    if (department.toLowerCase() === "management") setColor("accent");
-  }, []);
+  useEffect(
+    function () {
+      if (department.toLowerCase() === "customer service") setColor("primary");
+      if (department.toLowerCase() === "customer support")
+        setColor("secondary");
+      if (department.toLowerCase() === "management") setColor("accent");
+    },
+    [department],
+  );
 
   return (
     <div

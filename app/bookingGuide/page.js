@@ -322,7 +322,7 @@ function page() {
               <div className="md:w-1/2 mx-6 md:mx-0">
                 <p className="text-base lg:text-lg xl:text-xl text-gray-600 mb-6">
                   Once you find the AstuteInfo that meets your needs, click on
-                  it to view more details. You'll see information about the
+                  it to view more details. {`You'll`} see information about the
                   service, including pricing, duration, and service provider
                   credentials.
                 </p>
@@ -336,7 +336,7 @@ function page() {
                         Detailed descriptions
                       </span>
                       <p className="text-sm lg:text-base xl:text-lg text-gray-600">
-                        Comprehensive information about what's included
+                        Comprehensive information about {`what's`} included
                       </p>
                     </div>
                   </div>
@@ -404,9 +404,9 @@ function page() {
               </div>
               <div className="md:w-1/2 mx-6 md:mx-0">
                 <p className="text-base lg:text-lg xl:text-xl text-gray-600 mb-6">
-                  Once you've confirmed availability, proceed to book the
-                  AstuteInfo. You'll be prompted to provide details such as the
-                  date, time, and any special requests or instructions.
+                  Once {`you've`} confirmed availability, proceed to book the
+                  AstuteInfo. {`You'll`} be prompted to provide details such as
+                  the date, time, and any special requests or instructions.
                 </p>
                 <div className="space-y-3">
                   <div className="flex items-center gap-3 bg-white p-3 rounded-lg border border-gray-200">
@@ -480,8 +480,8 @@ function page() {
               </div>
               <div className="md:w-1/2 mx-6 md:mx-0">
                 <p className="text-base lg:text-lg xl:text-xl text-gray-600 mb-6">
-                  After successfully booking the AstuteInfo, you'll receive a
-                  confirmation email with all the details of your booking. You
+                  After successfully booking the AstuteInfo, {`you'll`} receive
+                  a confirmation email with all the details of your booking. You
                   can also view your bookings in your account on our platform.
                 </p>
                 <div className="bg-green-50 border border-green-200 rounded-lg p-4 flex items-start gap-3">
@@ -523,8 +523,8 @@ function page() {
                   <p className="text-gray-600 text-sm lg:text-base xl:text-lg">
                     Our service providers are professionals who will arrive on
                     time and deliver the service according to the specifications
-                    in your booking. They'll bring all necessary equipment and
-                    materials needed for the service.
+                    in your booking. {`They'll`} bring all necessary equipment
+                    and materials needed for the service.
                   </p>
                 </div>
               </div>
@@ -577,9 +577,9 @@ function page() {
               Ready to Book Your AstuteInfo Service?
             </h3>
             <p className="text-base lg:text-lg xl:text-xl text-gray-600 text-center mb-6">
-              That's it! You're now ready to book an AstuteInfo with ease on our
-              platform. If you have any questions or need assistance, feel free
-              to contact our customer support team.
+              {`That's`} it! {`You're`} now ready to book an AstuteInfo with
+              ease on our platform. If you have any questions or need
+              assistance, feel free to contact our customer support team.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
@@ -657,13 +657,14 @@ function page() {
 
               <div className="bg-white rounded-lg shadow-sm p-6">
                 <h3 className="font-bold text-lg lg:text-xl mb-2">
-                  What if I'm not satisfied with the service?
+                  What if {`I'm`} not satisfied with the service?
                 </h3>
                 <p className="text-base lg:text-lg xl:text-xl text-gray-600">
-                  Your satisfaction is our priority. If you're not completely
-                  satisfied with the service, please contact our customer
-                  support team within 48 hours of service completion. We'll work
-                  with you to resolve any issues and ensure your satisfaction.
+                  Your satisfaction is our priority. If {`you're`} not
+                  completely satisfied with the service, please contact our
+                  customer support team within 48 hours of service completion.{" "}
+                  {`We'll`} work with you to resolve any issues and ensure your
+                  satisfaction.
                 </p>
               </div>
             </div>

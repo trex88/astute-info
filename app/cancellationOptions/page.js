@@ -229,8 +229,8 @@ function Page() {
                   </h3>
                   <p className="text-3xs lg:text-lg text-blue-100 mb-6 max-w-lg">
                     Our customer service team is available to assist you with
-                    cancellations over the phone. We're here to help make the
-                    process as smooth as possible.
+                    cancellations over the phone. {`We're`} here to help make
+                    the process as smooth as possible.
                   </p>
                   <Link
                     href="contactUs"
@@ -293,7 +293,7 @@ function Page() {
                       </div>
                       <div>
                         <h4 className="text-lg lg:text-xl font-bold mb-1">
-                          Navigate to "My Bookings"
+                          {`Navigate to "My Bookings"`}
                         </h4>
                         <p className="text-3xs text-gray-600">
                           Find and select the booking you wish to cancel from
@@ -311,7 +311,7 @@ function Page() {
                       </div>
                       <div>
                         <h4 className="text-lg lg:text-xl font-bold mb-1">
-                          Select "Cancel Booking"
+                          {` Select "Cancel Booking"`}
                         </h4>
                         <p className="text-3xs text-gray-600">
                           Click the cancellation button and confirm your

@@ -116,7 +116,7 @@ function Page() {
                 className="bg-primary/20 hover:bg-primary/30 mb-4"
                 textColor="text-primary"
               >
-                We're Hiring
+                {` We're Hiring`}
               </Badge>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
                 Build Your Career <span className="text-primary">With Us</span>
@@ -213,9 +213,9 @@ function Page() {
                     </h3>
                     <div className="relative">
                       <div className="italic text-gray-600 mb-4 text-3xs lg:text-lg">
-                        "Joining AstuteInfo was the best career decision I've
+                        {`"Joining AstuteInfo was the best career decision I've
                         made. The collaborative environment, growth
-                        opportunities, and work-life balance are unmatched."
+                        opportunities, and work-life balance are unmatched."`}
                       </div>
                       <div className="flex items-center gap-3">
                         <div className="relative size-10 lg:size-15 rounded-full">
@@ -290,10 +290,10 @@ function Page() {
               Our Culture
             </Badge>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-              Why You'll Love Working With Us
+              Why {`You'll`} Love Working With Us
             </h2>
             <p className="text-gray-600 text-lg lg:text-xl">
-              At AstuteInfo, we're building a workplace where innovation
+              At AstuteInfo, {`we're`} building a workplace where innovation
               thrives, collaboration is celebrated, and every team member has
               the opportunity to make an impact.
             </p>
@@ -349,7 +349,7 @@ function Page() {
               </h2>
               <p className="text-gray-600 text-lg lg:text-xl mb-8">
                 We believe that taking care of our employees leads to better
-                outcomes for everyone. That's why we offer a comprehensive
+                outcomes for everyone.{` That's`} why we offer a comprehensive
                 benefits package designed to support your well-being and
                 professional growth.
               </p>
@@ -430,8 +430,8 @@ function Page() {
               Current Job Openings
             </h2>
             <p className="text-gray-600 text-lg lg:text-xl">
-              We're looking for talented individuals to join our team. Check out
-              our current openings and find the perfect role for you.
+              {` We're`} looking for talented individuals to join our team.
+              Check out our current openings and find the perfect role for you.
             </p>
           </div>
           <div className="grid grid-cols-1 gap-6">

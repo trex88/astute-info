@@ -141,7 +141,7 @@ export default function TrialForm({
                       <ChevronRight className="h-4 w-4" />
                     </div>
                     <span className="text-gray-600">
-                      You'll receive a confirmation email within 24 hours
+                      {`You'll receive a confirmation email within 24 hours`}
                     </span>
                   </li>
                   <li className="flex items-start gap-2">
@@ -548,7 +548,7 @@ export default function TrialForm({
           {/* Form Footer */}
           <div className="bg-gray-50 p-6 border-t border-gray-200 text-center">
             <p className="text-gray-600">
-              Need additional support? We're here to help!{" "}
+              {` Need additional support? We're here to help!`}{" "}
               <Link
                 href="/contact"
                 className="text-primary font-medium hover:underline"
