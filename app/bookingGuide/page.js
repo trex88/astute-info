@@ -79,7 +79,7 @@ function page() {
           </div>
         </div>
 
-        <div className="relative mx-6">
+        <div className="relative mx-6 xl:mx-20">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-10 items-center">
             {/* Left Content */}
             <div className="lg:col-span-6 text-white">

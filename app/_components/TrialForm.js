@@ -388,7 +388,7 @@ export default function TrialForm({
               <div className="md:col-span-2 lg:col-span-1">
                 <label
                   htmlFor="budget"
-                  className="block text-base xl:text-lg font-medium text-gray-700 mb-1 flex items-center"
+                  className="text-base xl:text-lg font-medium text-gray-700 mb-1 flex items-center"
                 >
                   <DollarSign className="h-4 w-4 text-gray-400 mr-1" />
                   Budget
@@ -409,7 +409,7 @@ export default function TrialForm({
               <div className="md:col-span-2 lg:col-span-1">
                 <label
                   htmlFor="timeline"
-                  className="block text-base xl:text-lg font-medium text-gray-700 mb-1 flex items-center"
+                  className="text-base xl:text-lg font-medium text-gray-700 mb-1 flex items-center"
                 >
                   <Clock className="h-4 w-4 text-gray-400 mr-1" />
                   Timeline
@@ -550,7 +550,7 @@ export default function TrialForm({
             <p className="text-gray-600">
               {` Need additional support? We're here to help!`}{" "}
               <Link
-                href="/contact"
+                href="/contactUs"
                 className="text-primary font-medium hover:underline"
               >
                 Contact Customer Support

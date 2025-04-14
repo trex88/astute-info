@@ -67,7 +67,7 @@ function Footer() {
             <ul className="space-y-3">
               <FooterItem
                 className="hover:text-secondary"
-                href=""
+                href="bookingGuide"
                 color="secondary"
               >
                 How to book our AstuteInfo services

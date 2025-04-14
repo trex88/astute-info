@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -21,19 +21,17 @@ import {
   ChevronDown,
 } from "lucide-react";
 import heroImg from "@/public/images/homeHero.png";
+import AIRobot from "@/public/images/AIRobot.png";
 
 export default function HomePage() {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [activeFeature, setActiveFeature] = useState(0);
+  const demoSectionRef = useRef(null);
 
-  // Handle scroll for animations
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  function handleWatchDemo() {
+    demoSectionRef.current.scrollIntoView({
+      behavior: "smooth",
+    });
+  }
 
   // Auto-rotate features
   useEffect(() => {
@@ -169,7 +167,7 @@ export default function HomePage() {
                 style={{ animationDelay: "0.8s" }}
               >
                 <Link
-                  href="/register-trial"
+                  href="/allServices"
                   className="group bg-gradient-to-r from-primary to-[#6ee7b7] text-white px-8 py-4
                     rounded-full font-medium transition-all duration-300 flex items-center
                     justify-center gap-2 shadow-lg hover:shadow-primary/20 hover:shadow-xl transform
@@ -178,15 +176,17 @@ export default function HomePage() {
                   Start Free Trial
                   <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
-                <Link
-                  href="#"
+                <button
+                  type="button"
                   className="group bg-white/10 hover:bg-white/20 border border-white/40 text-white px-8 py-4
                     rounded-full font-medium transition-all duration-300 flex items-center
-                    justify-center gap-2 backdrop-blur-sm transform hover:-translate-y-1"
+                    justify-center gap-2 backdrop-blur-sm transform hover:-translate-y-1
+                    hover:cursor-pointer"
+                  onClick={handleWatchDemo}
                 >
                   <Play className="h-4 w-4" />
                   Watch Demo
-                </Link>
+                </button>
               </div>
 
               {/* Stats */}
@@ -315,7 +315,7 @@ export default function HomePage() {
 
       {/* Interactive Features Section */}
       <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 xl:px-1">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <div
               className="inline-flex items-center bg-primary/10 px-4 py-2 rounded-full text-sm
@@ -432,7 +432,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Quote Section - Unique Design */}
+      {/* Quote Section */}
       <section
         className="py-20 bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a] text-white
           relative overflow-hidden"
@@ -499,7 +499,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Services Section - Unique Design */}
+      {/* Services Section */}
       <section
         id="services"
         className="py-20 bg-white relative overflow-hidden"
@@ -546,7 +546,7 @@ export default function HomePage() {
 
               <div className="relative h-48 overflow-hidden">
                 <Image
-                  src="/placeholder.svg?height=200&width=400"
+                  src={AIRobot}
                   alt="AI Training"
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-700"
@@ -609,7 +609,7 @@ export default function HomePage() {
                 </div>
 
                 <Link
-                  href="/services/ai-training"
+                  href="allServices/AITraining"
                   className="inline-flex items-center text-primary font-medium group-hover:text-white
                     transition-colors duration-500"
                 >
@@ -696,7 +696,7 @@ export default function HomePage() {
                 </div>
 
                 <Link
-                  href="/services/ai-consulting"
+                  href="allServices/AIConsulting"
                   className="inline-flex items-center text-primary font-medium group-hover:text-white
                     transition-colors duration-500"
                 >
@@ -784,7 +784,7 @@ export default function HomePage() {
                 </div>
 
                 <Link
-                  href="/services/ai-workshops"
+                  href="allServices/AIWorkshops"
                   className="inline-flex items-center text-primary font-medium group-hover:text-white
                     transition-colors duration-500"
                 >
@@ -800,7 +800,7 @@ export default function HomePage() {
 
           <div className="mt-16 text-center">
             <Link
-              href="/services"
+              href="allServices"
               className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-primary
                 to-[#6ee7b7] text-white rounded-full font-medium hover:shadow-lg
                 hover:shadow-primary/20 transition-all duration-300 transform
@@ -815,11 +815,11 @@ export default function HomePage() {
 
       {/* Video Section */}
       <section
-        id="video"
         className="py-20 bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a] text-white
-          relative overflow-hidden"
+          relative scroll-mt-22"
+        ref={demoSectionRef}
       >
-        {/* Background Elements */}
+        {/* Background Decorative Elements */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute inset-0 opacity-20">
             <div
@@ -852,36 +852,14 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="relative max-w-4xl mx-auto">
-            {/* Video Placeholder */}
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl aspect-video">
-              <Image
-                src="/placeholder.svg?height=600&width=1000"
-                alt="AstuteInfo Demo Video"
-                fill
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-tr from-black/40 to-transparent"></div>
-
-              {/* Play Button */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <button
-                  className="group bg-white/20 backdrop-blur-sm hover:bg-white/30 rounded-full p-5
-                    transition-all duration-300 transform hover:scale-110"
-                >
-                  <Play className="h-10 w-10 text-white fill-white" />
-                </button>
-              </div>
-            </div>
-
-            {/* Video Caption */}
-            <div
-              className="absolute -bottom-5 left-1/2 transform -translate-x-1/2 bg-white/10
-                backdrop-blur-md border border-white/20 rounded-full px-6 py-3 text-white/90
-                text-sm"
-            >
-              3:45 min • See how AI is transforming financial services
-            </div>
+          <div className="max-w-4xl mx-auto">
+            <iframe
+              className="w-full h-96 rounded-2xl"
+              src="https://www.youtube.com/embed/kNXOCsL9OF8?si=XUl-WBBviDB5uitb"
+              title="See how AI is transforming financial services"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;fullscreen"
+              referrerPolicy="strict-origin-when-cross-origin"
+            ></iframe>
           </div>
         </div>
       </section>
@@ -981,7 +959,7 @@ export default function HomePage() {
                 </div>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Link
-                    href="/register-trial"
+                    href="allServices"
                     className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-primary
                       to-[#6ee7b7] text-white rounded-full font-medium hover:shadow-lg
                       hover:shadow-primary/20 transition-all duration-300 transform
