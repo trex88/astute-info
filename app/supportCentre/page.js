@@ -1,20 +1,15 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
 import {
   ChevronRight,
-  Search,
   MessageSquare,
   Phone,
   Mail,
   FileText,
-  Clock,
   ArrowRight,
-  Plus,
-  Minus,
 } from "lucide-react";
-import FaqItem from "./FaqItem";
+import FaqItem from "./FAQItem";
 
 export default function SupportCenter() {
   return (
