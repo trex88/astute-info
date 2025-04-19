@@ -969,7 +969,7 @@ export default function HomePage() {
                     <ArrowRight className="h-4 w-4 ml-2" />
                   </Link>
                   <Link
-                    href="/contact"
+                    href="contactUs#sales"
                     className="inline-flex items-center justify-center px-8 py-4 bg-white border
                       border-gray-300 text-gray-700 rounded-full font-medium hover:bg-gray-50
                       transition-all duration-300 transform hover:-translate-y-1"

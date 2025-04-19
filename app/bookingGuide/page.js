@@ -1,3 +1,5 @@
+"use client";
+
 import {
   LucideCheckCircle,
   LucideCheckSquare,
@@ -6,7 +8,6 @@ import {
 import Link from "next/link";
 import {
   LuArrowRight,
-  LuBriefcase,
   LuCalendar,
   LuChevronRight,
   LuClock,
@@ -35,8 +36,17 @@ import Step5 from "./Step5.js";
 import Step6 from "./Step6.js";
 import Step7 from "./Step7.js";
 import Step8 from "./Step8.js";
+import { useRef } from "react";
 
-function page() {
+function Page() {
+  const bookingStepSection = useRef(null);
+
+  function scrollToBookingStepSection() {
+    bookingStepSection.current.scrollIntoView({
+      behavior: "smooth",
+    });
+  }
+
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero section */}
@@ -107,17 +117,19 @@ function page() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                <Link
-                  href="#booking-steps"
+                <button
+                  type="button"
                   className="group bg-primary text-white text-base lg:text-lg hover:bg-primary/90 px-6 py-3
                     rounded-md font-medium transition-all duration-300 flex items-center
-                    justify-center gap-2 shadow-lg hover:shadow-xl hover:-translate-y-1"
+                    justify-center gap-2 shadow-lg hover:shadow-xl hover:-translate-y-1
+                    hover:cursor-pointer"
+                  onClick={scrollToBookingStepSection}
                 >
                   View Booking Steps
                   <LuChevronRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                </Link>
+                </button>
                 <Link
-                  href="#"
+                  href="allServices"
                   className="group bg-white/10 hover:bg-white/20 border border-white/40 text-white text-base
                     lg:text-lg px-6 py-3 rounded-md font-medium transition-all duration-300 flex
                     items-center justify-center gap-2 backdrop-blur-sm hover:-translate-y-1"
@@ -274,9 +286,9 @@ function page() {
       </section>
 
       {/* Main Content */}
-      <section className="py-16">
+      <section className="py-16 scroll-mt-20" ref={bookingStepSection}>
         <div className="max-w-4xl xl:max-w-6xl mx-auto">
-          <div className="text-center mb-16 lg:mb-30">
+          <div className="text-center mb-16 lg:mb-20">
             <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold mb-4">
               Booking Your AstuteInfo Service
             </h2>
@@ -287,7 +299,7 @@ function page() {
           </div>
 
           {/* Step 1 */}
-          <div className="mb-25 md:mb-30 xl:mb-40 mx-0 md:mx-5">
+          <div className="mb-10 md:mb-20 xl:mb-30 mx-0 md:mx-5">
             <div className="flex flex-col md:flex-row gap-8 md:gap-10 items-center">
               <div className="md:w-1/2">
                 <Step1 />
@@ -314,7 +326,7 @@ function page() {
           </div>
 
           {/* Step 2 */}
-          <div className="mb-25 md:mb-30 xl:mb-40 mx-0 md:mx-5">
+          <div className="mb-10 md:mb-20 xl:mb-30 mx-0 md:mx-5">
             <div className="flex flex-col md:flex-row-reverse gap-8 md:gap-10 items-center">
               <div className="md:w-1/2">
                 <Step2 />
@@ -372,7 +384,7 @@ function page() {
           </div>
 
           {/* Step 3 */}
-          <div className="mb-25 md:mb-30 xl:mb-40 mx-0 md:mx-5">
+          <div className="mb-10 md:mb-20 xl:mb-30 mx-0 md:mx-5">
             <div className="flex flex-col md:flex-row gap-8 md:gap-10 items-center">
               <div className="md:w-1/2">
                 <Step3 />
@@ -397,7 +409,7 @@ function page() {
           </div>
 
           {/* Step 4 */}
-          <div className="mb-25 md:mb-30 xl:mb-40 mx-0 md:mx-5">
+          <div className="mb-10 md:mb-20 xl:mb-30 mx-0 md:mx-5">
             <div className="flex flex-col md:flex-row-reverse gap-8 md:gap-10 items-center">
               <div className="md:w-1/2">
                 <Step4 />
@@ -433,7 +445,7 @@ function page() {
           </div>
 
           {/* Step 5 */}
-          <div className="mb-25 md:mb-30 xl:mb-40 mx-0 md:mx-5">
+          <div className="mb-10 md:mb-20 xl:mb-30 mx-0 md:mx-5">
             <div className="flex flex-col md:flex-row gap-8 md:gap-10 items-center">
               <div className="md:w-1/2">
                 <Step5 />
@@ -473,7 +485,7 @@ function page() {
           </div>
 
           {/* Step 6 */}
-          <div className="mb-25 md:mb-30 xl:mb-40 mx-0 md:mx-5">
+          <div className="mb-10 md:mb-20 xl:mb-30 mx-0 md:mx-5">
             <div className="flex flex-col md:flex-row-reverse gap-8 md:gap-10 items-center">
               <div className="md:w-1/2">
                 <Step6 />
@@ -504,7 +516,7 @@ function page() {
           </div>
 
           {/* Step 7 */}
-          <div className="mb-25 md:mb-30 xl:mb-40 mx-0 md:mx-5">
+          <div className="mb-10 md:mb-20 xl:mb-30 mx-0 md:mx-5">
             <div className="flex flex-col md:flex-row gap-8 md:gap-10 items-center">
               <div className="md:w-1/2">
                 <Step7 />
@@ -532,7 +544,7 @@ function page() {
           </div>
 
           {/* Step 8 */}
-          <div className="mb-25 md:mb-30 xl:mb-40 mx-0 md:mx-5">
+          <div className="mb-10 md:mb-20 xl:mb-30 mx-0 md:mx-5">
             <div className="flex flex-col md:flex-row-reverse gap-8 md:gap-10 items-center">
               <div className="md:w-1/2">
                 <Step8 />
@@ -583,11 +595,13 @@ function page() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                href="#"
+                href="allServices"
                 className="text-base lg:text-lg bg-primary text-white hover:bg-primary/90 px-6 py-3
-                  rounded-md font-medium transition-colors flex items-center justify-center gap-2"
+                  rounded-md font-medium transition-colors flex items-center justify-center gap-2
+                  group"
               >
-                Browse Services Now <LuArrowRight className="h-4 w-4" />
+                Browse Services Now{" "}
+                <LuArrowRight className="h-4 w-4 group-hover:translate-x-1 duration-150" />
               </Link>
               <Link
                 href="contactUs"
@@ -595,7 +609,8 @@ function page() {
                   hover:bg-gray-50 px-6 py-3 rounded-md font-medium transition-colors flex
                   items-center justify-center gap-2"
               >
-                Contact Support <LucideHelpCircle className="h-4 w-4" />
+                Contact Support{" "}
+                <LucideHelpCircle className="size-4 md:size-5" />
               </Link>
             </div>
           </div>
@@ -675,4 +690,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;

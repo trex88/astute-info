@@ -1,16 +1,10 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import ContactCard from "./ContactCard";
 import TabButton from "./TabButton";
-import {
-  MapPin,
-  Phone,
-  Globe,
-  MessageCircle,
-  Headphones,
-  Users,
-} from "lucide-react";
+import { Phone, MessageCircle, Headphones, Users } from "lucide-react";
+import RegionAccordion from "./RegionAccordion";
 
 // Data for Customer Support
 const customerSupportRegions = [
@@ -262,10 +256,12 @@ const salesDepartmentRegions = [
 ];
 
 export default function ContactPage() {
-  const customerSupportTab = useRef(null);
-  const technicalSupportTab = useRef(null);
-  const salesDepartmentTab = useRef(null);
+  const contactSectionRef = useRef(null);
   const [activeTab, setActiveTab] = useState("customer");
+
+  useEffect(function () {
+    if (location.hash) setActiveTab(location.hash.slice(1));
+  }, []);
 
   return (
     <div className="bg-gradient-to-b from-white to-blue-50">
@@ -335,20 +331,29 @@ export default function ContactPage() {
             <ContactCard
               icon={<MessageCircle className="h-6 w-6 text-primary" />}
               title="Customer Support"
+              type="customer"
               description="For general inquiries and assistance with our customer support team."
               buttonText="Contact Customer Support"
+              setActiveTab={setActiveTab}
+              contactSectionRef={contactSectionRef}
             />
             <ContactCard
               icon={<Headphones className="h-6 w-6 text-primary" />}
               title="Technical Support"
+              type="technical"
               description="For technical issues or questions about our products, contact our technical support team."
               buttonText="Contact Technical Support"
+              setActiveTab={setActiveTab}
+              contactSectionRef={contactSectionRef}
             />
             <ContactCard
               icon={<Users className="h-6 w-6 text-primary" />}
               title="Sales Department"
+              type="sales"
               description="To inquire about our products or discuss partnership, please contact our sales department."
               buttonText="Contact Sales Department"
+              setActiveTab={setActiveTab}
+              contactSectionRef={contactSectionRef}
             />
           </div>
         </div>
@@ -382,15 +387,17 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Tabs */}
-      <section className="py-12 bg-gray-50">
+      <section
+        id="sales"
+        className="py-12 bg-gray-50 scroll-mt-20"
+        ref={contactSectionRef}
+      >
         <div className="max-w-6xl mx-auto">
           <div className="bg-white rounded-xl shadow-md overflow-hidden">
             <div className="border-b">
               <nav className="flex" aria-label="Tabs">
                 <TabButton
-                  ref={customerSupportTab}
                   name="customer"
-                  target="customer-support"
                   activeTab={activeTab}
                   setActiveTab={setActiveTab}
                 >
@@ -398,9 +405,7 @@ export default function ContactPage() {
                 </TabButton>
 
                 <TabButton
-                  ref={technicalSupportTab}
                   name="technical"
-                  target="technical-support"
                   activeTab={activeTab}
                   setActiveTab={setActiveTab}
                 >
@@ -408,9 +413,7 @@ export default function ContactPage() {
                 </TabButton>
 
                 <TabButton
-                  ref={salesDepartmentTab}
                   name="sales"
-                  target="sales-department"
                   activeTab={activeTab}
                   setActiveTab={setActiveTab}
                 >
@@ -422,28 +425,34 @@ export default function ContactPage() {
             {/* Tab Content */}
             <div className="p-6">
               {/* Customer Support Tab */}
-              <div id="customer-support" className="tab-content block">
-                <h2 className="text-2xl font-bold text-gray-800 mb-6">
-                  Customer Support
-                </h2>
-                <RegionAccordion regions={customerSupportRegions} />
-              </div>
+              {activeTab === "customer" && (
+                <div>
+                  <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6">
+                    Customer Support
+                  </h2>
+                  <RegionAccordion regions={customerSupportRegions} />
+                </div>
+              )}
 
               {/* Technical Support Tab */}
-              <div id="technical-support" className="tab-content hidden">
-                <h2 className="text-2xl font-bold text-gray-800 mb-6">
-                  Technical Support
-                </h2>
-                <RegionAccordion regions={technicalSupportRegions} />
-              </div>
+              {activeTab === "technical" && (
+                <div>
+                  <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6">
+                    Technical Support
+                  </h2>
+                  <RegionAccordion regions={technicalSupportRegions} />
+                </div>
+              )}
 
               {/* Sales Department Tab */}
-              <div id="sales-department" className="tab-content hidden">
-                <h2 className="text-2xl font-bold text-gray-800 mb-6">
-                  Sales Department
-                </h2>
-                <RegionAccordion regions={salesDepartmentRegions} />
-              </div>
+              {activeTab === "sales" && (
+                <div>
+                  <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6">
+                    Sales Department
+                  </h2>
+                  <RegionAccordion regions={salesDepartmentRegions} />
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -451,24 +460,24 @@ export default function ContactPage() {
 
       {/* Contact Form */}
       <section className="py-16 bg-gradient-to-b from-blue-50 to-white">
-        <div className="container">
+        <div>
           <div className="max-w-3xl mx-auto text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
               Send Us a Message
             </h2>
-            <p className="text-gray-600">
+            <p className="text-gray-600 text-base md:text-lg">
               Fill out the form below and our team will get back to you as soon
               as possible
             </p>
           </div>
 
-          <div className="max-w-3xl mx-auto">
+          <div className="max-w-3xl md:max-w-4xl mx-3 md:mx-auto">
             <form className="bg-white rounded-xl shadow-md p-8">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                 <div>
                   <label
                     htmlFor="name"
-                    className="block text-sm font-medium text-gray-700 mb-1"
+                    className="block text-sm md:text-base font-medium text-gray-700 mb-1"
                   >
                     Your Name
                   </label>
@@ -483,7 +492,7 @@ export default function ContactPage() {
                 <div>
                   <label
                     htmlFor="email"
-                    className="block text-sm font-medium text-gray-700 mb-1"
+                    className="block text-sm md:text-base font-medium text-gray-700 mb-1"
                   >
                     Email Address
                   </label>
@@ -500,7 +509,7 @@ export default function ContactPage() {
               <div className="mb-6">
                 <label
                   htmlFor="subject"
-                  className="block text-sm font-medium text-gray-700 mb-1"
+                  className="block text-sm md:text-base font-medium text-gray-700 mb-1"
                 >
                   Subject
                 </label>
@@ -516,7 +525,7 @@ export default function ContactPage() {
               <div className="mb-6">
                 <label
                   htmlFor="message"
-                  className="block text-sm font-medium text-gray-700 mb-1"
+                  className="block text-sm md:text-base font-medium text-gray-700 mb-1"
                 >
                   Message
                 </label>
@@ -533,7 +542,8 @@ export default function ContactPage() {
                 <button
                   type="submit"
                   className="px-6 py-3 bg-gradient-to-r from-primary to-blue-600 text-white font-medium
-                    rounded-md shadow-sm hover:shadow-md transition-all"
+                    text-base md:text-lg rounded-md shadow-sm hover:shadow-md hover:cursor-pointer
+                    active:translate-0.5 transition-all"
                 >
                   Send Message
                 </button>
@@ -542,87 +552,6 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
-    </div>
-  );
-}
-
-// Component for region accordions
-function RegionAccordion({ regions }) {
-  return (
-    <div className="space-y-4">
-      {regions.map((region, index) => (
-        <div
-          key={index}
-          className="border border-gray-200 rounded-lg overflow-hidden"
-        >
-          <button
-            className="w-full flex items-center justify-between px-6 py-4 bg-gray-50 hover:bg-gray-100
-              transition-colors"
-            onClick={(e) => {
-              const content = e.currentTarget.nextElementSibling;
-              const icon = e.currentTarget.querySelector(".accordion-icon");
-
-              if (content.style.maxHeight) {
-                content.style.maxHeight = null;
-                icon.classList.remove("rotate-180");
-              } else {
-                content.style.maxHeight = content.scrollHeight + "px";
-                icon.classList.add("rotate-180");
-              }
-            }}
-          >
-            <div className="flex items-center gap-3">
-              <MapPin className="h-5 w-5 text-primary" />
-              <span className="font-medium text-gray-800">{region.name}</span>
-            </div>
-            <svg
-              className="accordion-icon w-5 h-5 text-gray-500 transform transition-transform duration-200"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M19 9l-7 7-7-7"
-              ></path>
-            </svg>
-          </button>
-
-          <div className="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
-            <div className="px-6 py-4">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {region.countries.map((country, idx) => (
-                  <div key={idx} className="flex flex-col">
-                    <div className="flex items-center gap-2 mb-2">
-                      <Globe className="h-4 w-4 text-gray-500" />
-                      <span className="font-medium text-gray-800">
-                        {country.name}
-                      </span>
-                    </div>
-
-                    <a
-                      href={`tel:${country.phone}`}
-                      className="flex items-center gap-2 text-primary hover:text-blue-700 transition-colors mb-1"
-                    >
-                      <Phone className="h-4 w-4" />
-                      <span>{country.phone}</span>
-                    </a>
-
-                    {country.accessCode && (
-                      <div className="text-sm text-gray-600 ml-6">
-                        Access code: {country.accessCode}
-                      </div>
-                    )}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      ))}
     </div>
   );
 }

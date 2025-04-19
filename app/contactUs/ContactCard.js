@@ -1,7 +1,22 @@
 import { LuChevronRight } from "react-icons/lu";
 
 // Component for contact cards in the hero section
-function ContactCard({ icon, title, description, buttonText }) {
+function ContactCard({
+  icon,
+  title,
+  description,
+  buttonText,
+  type,
+  setActiveTab,
+  contactSectionRef,
+}) {
+  function handleClick() {
+    setActiveTab(type);
+    contactSectionRef.current.scrollIntoView({
+      behavior: "smooth",
+    });
+  }
+
   return (
     <div
       className="bg-white rounded-xl shadow-sm hover:shadow-md transition-all p-6 flex flex-col
@@ -30,6 +45,7 @@ function ContactCard({ icon, title, description, buttonText }) {
         type="button"
         className="text-primary mx-auto text-base sm:text-lg font-medium hover:text-blue-500
           hover:cursor-pointer flex items-center gap-1 transition-all"
+        onClick={handleClick}
       >
         {buttonText}
         <LuChevronRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
