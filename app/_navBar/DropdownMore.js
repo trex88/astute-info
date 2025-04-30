@@ -76,7 +76,9 @@ function DropdownMore({ removeDropdown }) {
               </li>
               <li>
                 <Link
-                  href="#"
+                  href="https://www.astuteinfo.com/dronetraining"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-base lg:text-lg flex items-center gap-2 text-gray-700 hover:text-secondary
                     transition-colors"
                   onClick={removeDropdown}
@@ -87,7 +89,9 @@ function DropdownMore({ removeDropdown }) {
               </li>
               <li>
                 <Link
-                  href="#"
+                  href="https://www.droneservicehub.com/service"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-base lg:text-lg flex items-center gap-2 text-gray-700 hover:text-secondary
                     transition-colors"
                   onClick={removeDropdown}
@@ -98,7 +102,9 @@ function DropdownMore({ removeDropdown }) {
               </li>
               <li>
                 <Link
-                  href="#"
+                  href="https://www.dronesserve.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-base lg:text-lg flex items-center gap-2 text-gray-700 hover:text-secondary
                     transition-colors"
                   onClick={removeDropdown}

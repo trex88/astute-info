@@ -1,6 +1,7 @@
 "use client";
 
-import FooterItem from "./FooterItem";
+import { Lightbulb } from "lucide-react";
+import FooterItem from "../_components/FooterItem";
 import Link from "next/link";
 import {
   LuChevronDown,
@@ -74,21 +75,27 @@ function Footer() {
               </FooterItem>
               <FooterItem
                 className="hover:text-secondary"
-                href=""
+                href="https://www.astuteinfo.com/dronetraining"
+                rel="noopener noreferrer"
+                target="_blank"
                 color="secondary"
               >
                 Join our AIRobotics training classes
               </FooterItem>
               <FooterItem
                 className="hover:text-secondary"
-                href=""
+                href="https://www.droneservicehub.com/service"
+                rel="noopener noreferrer"
+                target="_blank"
                 color="secondary"
               >
                 Other specialized AstuteInfo services
               </FooterItem>
               <FooterItem
                 className="hover:text-secondary"
-                href=""
+                href="https://www.dronesserve.com/"
+                rel="noopener noreferrer"
+                target="_blank"
                 color="secondary"
               >
                 Community forums
@@ -146,37 +153,9 @@ function Footer() {
         <div className="flex justify-center mt-16 mb-8">
           <Link href="/" className="flex items-center gap-3">
             <div className="bg-gray-800 p-3 rounded-lg">
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M12 2L2 7l10 5 10-5-10-5z"
-                  stroke="white"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M2 17l10 5 10-5"
-                  stroke="white"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M2 12l10 5 10-5"
-                  stroke="white"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
+              <Lightbulb />
             </div>
-            <span className="text-2xl font-bold text-white">AIRoboticx</span>
+            <span className="text-2xl font-bold text-white">AstuteInfo</span>
           </Link>
         </div>
       </div>
@@ -188,12 +167,12 @@ function Footer() {
             <div className="relative">
               <select
                 className="appearance-none bg-gray-800 text-gray-300 px-4 py-1 rounded-lg pr-8
-                  focus:outline-none focus:ring-2 focus:ring-primary"
+                  focus:outline-none focus:ring-2 focus:ring-primary hover:cursor-pointer"
               >
-                <option>AI Roboticx United States</option>
-                <option>AI Roboticx Canada</option>
-                <option>AI Roboticx UK</option>
-                <option>AI Roboticx Australia</option>
+                <option>AstuteInfo United States</option>
+                <option>AstuteInfo Canada</option>
+                <option>AstuteInfo UK</option>
+                <option>AstuteInfo Australia</option>
               </select>
               <div
                 className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2
@@ -205,7 +184,7 @@ function Footer() {
 
             {/* Copyright */}
             <div className="text-gray-400 text-sm">
-              @Copyright 2025 AIROBOD Inc. All rights reserved.
+              @Copyright 2025 AIROBOTICX Inc. All rights reserved.
             </div>
 
             {/* Social Media Icons */}

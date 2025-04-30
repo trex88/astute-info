@@ -9,7 +9,7 @@ function MainNavLink({
       <button
         type="button"
         onClick={() => toggleDropdown(dropdownName)}
-        className={`flex text-3xs xl:text-lg items-center hover:cursor-pointer gap-1 px-3 py-2
+        className={`flex text-base xl:text-lg items-center hover:cursor-pointer gap-1 px-3 py-2
           rounded-md transition-all duration-200 ${
           activeDropdown === dropdownName
               ? "text-primary bg-primary/5 "

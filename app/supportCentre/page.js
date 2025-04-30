@@ -10,8 +10,17 @@ import {
   ArrowRight,
 } from "lucide-react";
 import FaqItem from "./FAQItem";
+import { useRef } from "react";
 
 export default function SupportCenter() {
+  const faqSectionRef = useRef(null);
+
+  function handleBrowseFAQ() {
+    faqSectionRef.current.scrollIntoView({
+      behavior: "smooth",
+    });
+  }
+
   return (
     <main className="min-h-screen bg-gradient-to-b from-white to-gray-50">
       {/* Hero Section with Decorative Elements */}
@@ -81,6 +90,7 @@ export default function SupportCenter() {
                     className="bg-white border border-gray-200 hover:border-primary/50 hover:cursor-pointer
                       text-gray-700 text-base lg:text-lg px-5 py-3 rounded-lg font-medium inline-flex
                       items-center transition-all"
+                    onClick={handleBrowseFAQ}
                   >
                     Browse FAQs
                   </button>
@@ -362,7 +372,7 @@ export default function SupportCenter() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16 bg-white px-4">
+      <section className="py-16 bg-white px-4 scroll-mt-20" ref={faqSectionRef}>
         <div>
           <div className="text-center mb-12">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4">

@@ -32,6 +32,8 @@ function MobileAccordion({ title, icon, items, removeMobileMenu }) {
             href={item.href}
             className="block py-1.5 text-gray-600 hover:text-primary transition-colors"
             onClick={removeMobileMenu}
+            target={item.target}
+            rel={item.rel}
           >
             {item.label}
           </Link>

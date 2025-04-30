@@ -486,7 +486,6 @@ export default function ContactPage() {
                     id="name"
                     className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary
                       focus:border-primary"
-                    placeholder="John Doe"
                   />
                 </div>
                 <div>
@@ -501,7 +500,6 @@ export default function ContactPage() {
                     id="email"
                     className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary
                       focus:border-primary"
-                    placeholder="john@example.com"
                   />
                 </div>
               </div>

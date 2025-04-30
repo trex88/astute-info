@@ -121,9 +121,9 @@ function DropdownProducts({ removeDropdown }) {
               {/* Not working yet */}
               <li className="group">
                 <Link
-                  href=""
-                  className="opacity-30 cursor-not-allowed flex items-start gap-3 p-2 -ml-2 rounded-md
-                    hover:bg-gray-50 transition-colors"
+                  href="aiImplementation"
+                  className="flex items-start gap-3 p-2 -ml-2 rounded-md hover:bg-gray-50 transition-colors"
+                  onClick={removeDropdown}
                 >
                   <LuCpu className="size-5 lg:size-6 text-secondary mt-0.5" />
                   <div>

@@ -116,6 +116,40 @@
       transform: translateY(0);
     }
   }
+
+  @keyframes float {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+
+  @keyframes float-delayed {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+
+  @keyframes pulse-glow {
+    0%,
+    100% {
+      opacity: 0.3;
+    }
+    50% {
+      opacity: 0.8;
+    }
+  }
 }
 
 .animate-fadeIn {
@@ -143,12 +177,34 @@
   animation: fade-in 0.8s ease-out forwards;
 }
 
+.bg-grid-pattern {
+  background-size: 30px 30px;
+  background-image: radial-gradient(#5dadd2 1px, transparent 1px);
+}
+
+.transform-3d {
+  transform-style: preserve-3d;
+}
+
+.rotate-x-12 {
+  transform: rotateX(12deg);
+}
+
+.rotate-y-12 {
+  transform: rotateY(12deg);
+}
+
 * {
   box-sizing: border-box;
 }
 
 body {
   color: #000;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
 }
 
 :root {
