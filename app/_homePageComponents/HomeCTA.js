@@ -103,7 +103,12 @@ function HomeCTA() {
                   <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 duration-300" />
                 </Link>
                 <Link
-                  href="contactUs#sales"
+                  href={{
+                    pathname: "contactUs",
+                    query: {
+                      section: "sales",
+                    },
+                  }}
                   className="inline-flex items-center justify-center px-8 py-4 bg-white border
                     border-gray-300 text-gray-700 rounded-full font-medium hover:bg-gray-50
                     transition-all duration-300 transform hover:-translate-y-1"

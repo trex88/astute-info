@@ -1,4 +1,5 @@
 import { ArrowRight, Brain, ChevronDown, Play, Shield } from "lucide-react";
+import { motion } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
 import heroImg from "@/public/images/homeHero.png";
@@ -54,40 +55,37 @@ function HomeHero({ handleWatchDemo }) {
 
       <div className="container mx-auto px-4 relative z-10 pt-20 pb-32">
         <div className="flex flex-col lg:flex-row items-center gap-12 px-3">
-          <div className="lg:w-1/2 text-center lg:text-left">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="lg:w-full xl:w-1/2 text-center lg:text-left"
+          >
             <div
               className="inline-flex items-center bg-white/10 backdrop-blur-sm border border-white/20
-                px-4 py-2 rounded-full text-sm font-medium mb-6 animate-fade-in"
-              style={{ animationDelay: "0.2s" }}
+                px-4 py-2 rounded-full text-sm font-medium mb-6"
             >
               <span className="bg-primary h-2 w-2 rounded-full mr-2"></span>
               WELCOME TO ASTUTEINFO
             </div>
             <h1
-              className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight text-white
-                animate-fade-in"
-              style={{ animationDelay: "0.4s" }}
+              className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 leading-tight
+                text-white"
             >
               Empowering Those Who Drive{" "}
               <span className="relative inline-block">
                 <span className="relative z-10">Global Progress</span>
                 <span
-                  className="absolute bottom-2 left-0 w-full h-4 bg-gradient-to-r from-primary to-[#6ee7b7]
-                    opacity-40 rounded-lg -z-0"
+                  className="absolute bottom-1 lg:bottom-2 left-0 w-full h-2 md:h-4 bg-gradient-to-r
+                    from-primary to-[#6ee7b7] opacity-40 rounded-lg -z-0"
                 ></span>
               </span>
             </h1>
-            <p
-              className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto lg:mx-0 animate-fade-in"
-              style={{ animationDelay: "0.6s" }}
-            >
+            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto lg:mx-0">
               Leveraging cutting-edge AI technologies to enhance efficiency,
               productivity, and security in the finance industry.
             </p>
-            <div
-              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-in"
-              style={{ animationDelay: "0.8s" }}
-            >
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Link
                 href="/allServices"
                 className="group bg-gradient-to-r from-primary to-[#6ee7b7] text-white px-8 py-4
@@ -112,35 +110,55 @@ function HomeHero({ handleWatchDemo }) {
             </div>
 
             {/* Stats */}
-            <div
-              className="mt-12 grid grid-cols-3 gap-4 max-w-lg mx-auto lg:mx-0 animate-fade-in"
-              style={{ animationDelay: "1s" }}
-            >
+            <div className="mt-12 max-w-lg mx-auto lg:mx-0 grid grid-cols-3 gap-4">
               <div className="text-center">
-                <div className="text-3xl font-bold text-white mb-1">15+</div>
-                <div className="text-sm text-gray-400">Years Experience</div>
+                <div className="text-2xl md:text-3xl font-bold text-white mb-1">
+                  3
+                </div>
+                <div className="text-xs md:text-sm text-gray-300">
+                  Continents
+                </div>
+                <div className="text-xs md:text-sm text-gray-400">
+                  (U.S., Asia-Pacific, EU)
+                </div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-white mb-1">200+</div>
-                <div className="text-sm text-gray-400">Global Clients</div>
+                <div className="text-2xl md:text-3xl font-bold text-white mb-1">
+                  3
+                </div>
+                <div className="text-xs md:text-sm text-gray-300">
+                  AI-powered Platforms
+                </div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-white mb-1">98%</div>
-                <div className="text-sm text-gray-400">Success Rate</div>
+                <div className="text-2xl md:text-3xl font-bold text-white mb-1">
+                  4
+                </div>
+                <div className="text-xs md:text-sm text-gray-300">
+                  Industry Sectors
+                </div>
+                <div className="text-xs md:text-sm text-gray-400">
+                  Fintech, Cybersecurity, Compliance, Insurance
+                </div>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* 3D-like Hero Visual */}
-          <div
-            className="lg:w-1/2 relative animate-fade-in mx-4 sm:mx-2"
-            style={{ animationDelay: "1.2s" }}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="lg:w-10/12 xl:w-1/2 relative mx-4 sm:mx-2 mt-5 lg:mt-0"
           >
             <div className="relative">
               {/* Main Image */}
-              <div
-                className="relative z-20 rounded-2xl overflow-hidden shadow-2xl transform rotate-3
-                  hover:rotate-0 transition-transform duration-500"
+              <motion.div
+                initial={{ rotate: 0 }}
+                animate={{ rotate: 2 }}
+                whileHover={{ rotate: 0 }}
+                transition={{ duration: 0.6 }}
+                className="relative z-20 rounded-2xl overflow-hidden shadow-2xl"
               >
                 <Image
                   src={heroImg}
@@ -151,7 +169,7 @@ function HomeHero({ handleWatchDemo }) {
                   className="absolute inset-0 bg-gradient-to-tr from-primary/40 to-[#6ee7b7]/10
                     mix-blend-overlay"
                 ></div>
-              </div>
+              </motion.div>
 
               {/* Decorative Elements */}
               <div className="absolute top-0 right-0 w-32 h-32 bg-primary/30 rounded-full blur-2xl -z-10"></div>
@@ -196,11 +214,14 @@ function HomeHero({ handleWatchDemo }) {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div
+          className="absolute bottom-10 lg:bottom-20 left-1/2 transform -translate-x-1/2
+            animate-bounce"
+        >
           <ChevronDown className="h-8 w-8 text-white/50" />
         </div>
       </div>

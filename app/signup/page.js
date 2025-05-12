@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -415,7 +415,6 @@ export default function RegisterPage() {
                   <div className="flex items-start">
                     <div className="flex items-center h-5">
                       <input
-                        id="terms"
                         name="terms"
                         type="checkbox"
                         checked={acceptTerms}
@@ -428,14 +427,24 @@ export default function RegisterPage() {
                       <label htmlFor="terms" className="text-gray-700">
                         I agree to the{" "}
                         <Link
-                          href="/terms"
+                          href={{
+                            pathname: "policies",
+                            query: {
+                              section: "terms",
+                            },
+                          }}
                           className="text-primary hover:text-primary/80 transition-colors"
                         >
                           Terms of Service
                         </Link>{" "}
                         and{" "}
                         <Link
-                          href="/privacy"
+                          href={{
+                            pathname: "policies",
+                            query: {
+                              section: "privacy",
+                            },
+                          }}
                           className="text-primary hover:text-primary/80 transition-colors"
                         >
                           Privacy Policy

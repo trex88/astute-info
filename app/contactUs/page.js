@@ -5,6 +5,7 @@ import ContactCard from "./ContactCard";
 import TabButton from "./TabButton";
 import { Phone, MessageCircle, Headphones, Users } from "lucide-react";
 import RegionAccordion from "./RegionAccordion";
+import { useSearchParams } from "next/navigation";
 
 // Data for Customer Support
 const customerSupportRegions = [
@@ -256,11 +257,22 @@ const salesDepartmentRegions = [
 ];
 
 export default function ContactPage() {
-  const contactSectionRef = useRef(null);
   const [activeTab, setActiveTab] = useState("customer");
+  const contactSectionRef = useRef(null);
+  const searchParams = useSearchParams();
+  const targetSection = searchParams.get("section");
+
+  // useEffect(function () {
+  //   if (location.hash) setActiveTab(location.hash.slice(1));
+  // }, []);
 
   useEffect(function () {
-    if (location.hash) setActiveTab(location.hash.slice(1));
+    if (targetSection) {
+      setActiveTab(targetSection);
+      contactSectionRef.current.scrollIntoView({
+        behavior: "smooth",
+      });
+    }
   }, []);
 
   return (
@@ -388,7 +400,6 @@ export default function ContactPage() {
 
       {/* Contact Tabs */}
       <section
-        id="sales"
         className="py-12 bg-gray-50 scroll-mt-20"
         ref={contactSectionRef}
       >

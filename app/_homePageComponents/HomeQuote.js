@@ -8,7 +8,7 @@ function HomeQuote() {
     >
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute inset-0 opacity-30">
+        <div className="absolute inset-0 opacity-20">
           <svg
             width="100%"
             height="100%"

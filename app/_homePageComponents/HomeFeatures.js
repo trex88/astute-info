@@ -8,6 +8,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import financeAI from "@/public/images/AIFinance.png";
 
 const features = [
   {
@@ -126,18 +127,12 @@ function HomeFeatures() {
           <div className="order-1 lg:order-2">
             <div className="relative">
               {/* Main Image */}
-              <div className="relative z-10 rounded-2xl overflow-hidden shadow-xl">
+              <div className="relative z-10 rounded-2xl shadow-xl">
                 <Image
-                  src="/placeholder.svg?height=500&width=600"
+                  src={financeAI}
                   alt="AI in Finance"
-                  width={600}
-                  height={500}
-                  className="w-full h-auto"
+                  className="rounded-2xl"
                 />
-                <div
-                  className="absolute inset-0 bg-gradient-to-tr from-primary/30 to-transparent
-                    mix-blend-overlay"
-                ></div>
               </div>
 
               {/* Floating Elements */}

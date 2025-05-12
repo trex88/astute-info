@@ -12,7 +12,7 @@ import {
 } from "react-icons/lu";
 import { useEffect, useRef, useState } from "react";
 import MobileAccordion from "../_accordion/MobileAccordion";
-import { LucideBuilding2, LucideHelpCircle, Users } from "lucide-react";
+import { LucideHelpCircle } from "lucide-react";
 import MainNavLink from "./MainNavLink";
 import DropdownProducts from "./DropdownProducts";
 import DropdownRobotics from "./DropdownRobotics";
@@ -166,6 +166,7 @@ function NavBar() {
               className="text-3xs lg:text-lg bg-gradient-to-r from-primary to-secondary text-white px-6
                 py-2.5 rounded-md font-medium hover:shadow-md transition-all duration-300
                 hover:-translate-y-0.5 hidden md:flex items-center"
+              onClick={removeDropdown}
             >
               LOGIN
             </Link>

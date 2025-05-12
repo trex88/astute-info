@@ -7,6 +7,7 @@ import HomeQuote from "./_homePageComponents/HomeQuote";
 import HomeServices from "./_homePageComponents/HomeServices";
 import HomeVideo from "./_homePageComponents/HomeVideo";
 import HomeCTA from "./_homePageComponents/HomeCTA";
+import HomePartnerships from "./_homePageComponents/HomePartnerships";
 
 export default function HomePage() {
   const demoSectionRef = useRef(null);
@@ -21,6 +22,9 @@ export default function HomePage() {
     <>
       {/* Hero Section */}
       <HomeHero handleWatchDemo={handleWatchDemo} />
+
+      {/* Global Partnerships Section */}
+      <HomePartnerships />
 
       {/* Interactive Features Section */}
       <HomeFeatures />

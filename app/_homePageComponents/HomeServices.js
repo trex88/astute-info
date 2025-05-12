@@ -8,7 +8,9 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import AIRobot from "@/public/images/AIRobot.png";
+import imageAITraining from "@/public/images/AI-training.png";
+import imageAIConsulting from "@/public/images/AI-consulting.png";
+import imageAIWorkshop from "@/public/images/AI-workshop.png";
 
 function HomeServices() {
   return (
@@ -55,10 +57,12 @@ function HomeServices() {
 
             <div className="relative h-48 overflow-hidden">
               <Image
-                src={AIRobot}
+                src={imageAITraining}
                 alt="AI Training"
                 fill
-                className="object-cover group-hover:scale-110 transition-transform duration-700"
+                sizes="500px"
+                className="object-cover object-center group-hover:scale-110 transition-transform
+                  duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/60 z-10"></div>
               <div className="absolute bottom-4 left-4 z-20">
@@ -143,9 +147,10 @@ function HomeServices() {
 
             <div className="relative h-48 overflow-hidden">
               <Image
-                src="/placeholder.svg?height=200&width=400"
+                src={imageAIConsulting}
                 alt="AI Consulting"
                 fill
+                sizes="500px"
                 className="object-cover group-hover:scale-110 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/60 z-10"></div>
@@ -230,7 +235,7 @@ function HomeServices() {
 
             <div className="relative h-48 overflow-hidden">
               <Image
-                src="/placeholder.svg?height=200&width=400"
+                src={imageAIWorkshop}
                 alt="AI Workshops"
                 fill
                 className="object-cover group-hover:scale-110 transition-transform duration-700"

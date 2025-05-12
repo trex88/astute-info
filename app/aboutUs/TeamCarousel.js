@@ -5,54 +5,49 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import person1 from "../../public/images/person1.jpg";
 
-function TeamCarousel2() {
+function TeamCarousel() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const carouselRef = useRef(null);
   const [slidesPerView, setSlidesPerView] = useState(3);
 
   const teamMembers = [
     {
-      name: "Dr. Sarah Chen",
-      role: "Chief AI Officer",
+      name: "Vance Huynh",
+      role: "Co-Founder, President, Chief Innovation & Technology Officer",
       image: person1,
-      bio: "With over 15 years of experience in AI research, Dr. Chen leads our AI strategy and innovation initiatives.",
+      bio: " With over 20 years of experience in enterprise AI, cloud systems, and public policy, George Huynh drives the innovation vision at AIROBOD Inc.",
     },
     {
-      name: "Michael Rodriguez",
-      role: "Lead Data Scientist",
+      name: "Thuy Bich Tram (Elizabeth) Ho",
+      role: "Co-Founder, Chief Executive Officer",
       image: person1,
-      bio: "Michael specializes in machine learning algorithms and predictive analytics for financial applications.",
+      bio: " Elizabeth is a Certified Practising Accountant (CPA) and seasoned finance executive with more than 15 years of leadership in financial strategy, compliance, and global operations. She has scaled multinational operations and now leads AIROBOD’s U.S. and APAC expansion with a focus on secure, AI-driven platforms for financial institutions.",
+    },
+
+    {
+      name: "Micheal Vo",
+      role: "AI & Cyber Security Advisor, Head of Data",
+      image: person1,
+      bio: " Michael is a security expert with years of experience securing financial data systems and AI model pipelines. At AIROBOD, he advises on zero-trust architecture, secure development lifecycles, and compliance with global data protection laws.",
     },
     {
-      name: "Aisha Patel",
-      role: "AI Ethics Director",
+      name: "Dayne Voller",
+      role: "Group Chief Technology Officer, Managing Director of AIROBOD Europe & AIROBOD Africa",
       image: person1,
-      bio: "Aisha ensures our AI solutions adhere to ethical standards and responsible AI principles.",
+      bio: "As a Vice President of Valutico, led initiatives in fintech sectors. Spearheading initiatives in multiple fintech and healthcare companies, notably where he served as Chief Technology Officers and Vice Presidents. Delivered data-driven insights, improved client performance, and minimized risk, fostering innovation and impactful solutions. ",
     },
     {
-      name: "David Kim",
-      role: "Senior AI Engineer",
+      name: "Tobias Ruiz Moreno",
+      role: "Group Chief Data, Analytics & AI Officer, Managing Director of AIROBOD South America & AIROBOD New Zealand",
       image: person1,
-      bio: "David develops cutting-edge neural network architectures for our enterprise clients.",
+      bio: "Experienced product and data leader with a strong background in AI, analytics, and digital strategy. Former Chief Product Officer at Dymaxion Labs, leading digital product innovation. Managed global AI-driven initiatives in agriculture at GDM. Assistant Professor in Machine Learning at Universidad Torcuato Di Tella. Previous roles in data science and business intelligence at Tiendanube and Map of Agriculture. Holds an MSc in Management, Analytics, and Machine Learning from Columbia University.",
     },
     {
-      name: "Emma Wilson",
-      role: "Business Strategy Lead",
+      name: "Cong Pham",
+      role: "Web & Visual Communications Manager",
       image: person1,
-      bio: "Emma bridges the gap between technical capabilities and business applications.",
+      bio: " Cong is a versatile web developer and designer responsible for crafting AIROBOD’s digital presence. He manages multiple branded sites and marketing funnels while also contributing to product UI design and investor-ready presentations.",
     },
-    {
-      name: "James Thompson",
-      role: "Natural Language Processing Expert",
-      image: person1,
-      bio: "James specializes in developing advanced NLP models for conversational AI and text analytics.",
-    },
-    // {
-    //   name: "James Thompson",
-    //   role: "Natural Language Processing Expert",
-    //   image: person1,
-    //   bio: "James specializes in developing advanced NLP models for conversational AI and text analytics.",
-    // },
   ];
 
   // Update slides per view based on screen size
@@ -101,48 +96,44 @@ function TeamCarousel2() {
   }, [currentSlide, slidesPerView]);
 
   return (
-    <div className="relative max-w-10/12 lg:max-w-9/12 mx-auto">
-      <div className="overflow-x-hidden">
-        <div
-          ref={carouselRef}
-          className="flex transition-transform duration-500 ease-in-out"
-        >
-          {teamMembers.map((member, index) => (
+    <div className="relative max-w-10/12 lg:max-w-9/12 mx-auto overflow-x-hidden">
+      <div
+        ref={carouselRef}
+        className="flex transition-transform duration-500 ease-in-out"
+      >
+        {teamMembers.map((member, index) => (
+          <div
+            key={index}
+            className={"max-w-full sm:max-w-1/2 lg:max-w-1/3 shrink-0 px-4"}
+            // style={{ width: `${100 / slidesPerView}%` }}
+          >
             <div
-              key={index}
-              className="px-4"
-              style={{ flex: `0 0 ${100 / slidesPerView}%` }}
-              // className="max-w-full sm:max-w-1/2 lg:max-w-1/3 flex-shrink-0 px-4"
-              // style={{ width: `${100 / slidesPerView}%` }}
+              className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow
+                h-full"
             >
-              <div
-                className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow
-                  h-full"
-              >
-                <div className="h-64 overflow-hidden">
-                  <Image
-                    src={member.image || "/placeholder.svg"}
-                    alt={member.name}
-                    className="w-full h-full object-cover transform hover:scale-105 transition-transform
-                      duration-500"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-800 mb-1">
-                    {member.name}
-                  </h3>
-                  <p className="text-primary font-medium mb-4">{member.role}</p>
-                  <p className="text-gray-600">{member.bio}</p>
-                </div>
+              <div className="h-64 overflow-hidden">
+                <Image
+                  src={member.image || "/placeholder.svg"}
+                  alt={member.name}
+                  className="w-full h-full object-cover transform hover:scale-105 transition-transform
+                    duration-500"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-gray-800 mb-1">
+                  {member.name}
+                </h3>
+                <p className="text-primary font-medium mb-4">{member.role}</p>
+                <p className="text-gray-600">{member.bio}</p>
               </div>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
 
       <button
         onClick={prevSlide}
-        className="absolute top-1/2 left-4 -translate-y-1/2 w-10 h-10 bg-white rounded-full
+        className="absolute top-1/2 -left-0 -translate-y-1/2 w-10 h-10 bg-white rounded-full
           shadow-md flex items-center justify-center hover:bg-gray-50 hover:cursor-pointer
           focus:outline-none z-10"
         aria-label="Previous slide"
@@ -152,7 +143,7 @@ function TeamCarousel2() {
 
       <button
         onClick={nextSlide}
-        className="absolute top-1/2 right-4 -translate-y-1/2 w-10 h-10 bg-white rounded-full
+        className="absolute top-1/2 -right-4 -translate-y-1/2 w-10 h-10 bg-white rounded-full
           shadow-md flex items-center justify-center hover:bg-gray-50 hover:cursor-pointer
           focus:outline-none z-10"
         aria-label="Next slide"
@@ -178,4 +169,4 @@ function TeamCarousel2() {
   );
 }
 
-export default TeamCarousel2;
+export default TeamCarousel;

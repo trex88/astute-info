@@ -306,7 +306,7 @@ export default function AboutPage() {
             <div className="w-20 h-1.5 bg-gradient-to-r from-primary/50 to-blue-400/50 rounded-full mx-auto"></div>
           </div>
 
-          {/* <TeamCarousel /> */}
+          <TeamCarousel />
 
           <div className="mt-16 text-center">
             <p className="text-lg md:text-xl text-gray-700 mb-8 max-w-3xl mx-auto">
@@ -426,7 +426,6 @@ export default function AboutPage() {
                       id="name"
                       className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary
                         focus:border-primary"
-                      placeholder="John Doe"
                     />
                   </div>
                   <div>
@@ -441,7 +440,6 @@ export default function AboutPage() {
                       id="email"
                       className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary
                         focus:border-primary"
-                      placeholder="john@example.com"
                     />
                   </div>
                 </div>
