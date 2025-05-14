@@ -14,7 +14,7 @@ import imageAIWorkshop from "@/public/images/AI-workshop.png";
 
 function HomeServices() {
   return (
-    <section id="services" className="py-20 bg-white relative overflow-hidden">
+    <section className="pt-20 pb-30 bg-white relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 pointer-events-none">
         <div
@@ -122,7 +122,7 @@ function HomeServices() {
               </div>
 
               <Link
-                href="allServices/AITraining"
+                href="aiTraining"
                 className="inline-flex items-center text-primary font-medium group-hover:text-white
                   transition-colors duration-500"
               >
@@ -210,7 +210,7 @@ function HomeServices() {
               </div>
 
               <Link
-                href="allServices/AIConsulting"
+                href="aiConsulting"
                 className="inline-flex items-center text-primary font-medium group-hover:text-white
                   transition-colors duration-500"
               >
@@ -298,7 +298,7 @@ function HomeServices() {
               </div>
 
               <Link
-                href="allServices/AIWorkshops"
+                href="aiWorkshops"
                 className="inline-flex items-center text-primary font-medium group-hover:text-white
                   transition-colors duration-500"
               >
@@ -310,19 +310,6 @@ function HomeServices() {
               </Link>
             </div>
           </div>
-        </div>
-
-        <div className="mt-16 text-center">
-          <Link
-            href="allServices"
-            className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-primary
-              to-[#6ee7b7] text-white rounded-full font-medium hover:shadow-lg
-              hover:shadow-primary/20 transition-all duration-300 transform
-              hover:-translate-y-1 group"
-          >
-            View All Services
-            <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 duration-300" />
-          </Link>
         </div>
       </div>
     </section>

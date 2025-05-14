@@ -10,7 +10,7 @@ import Link from "next/link";
 
 const partnerTypes = [
   {
-    title: "Certified Drone Pilots",
+    title: "Certified AI Consultants",
     description:
       "Certified Drone pilots form the backbone of our service provider network, bringing specialized skills, experience, and certifications to the table. Whether capturing stunning aerial footage or conducting precise inspections, these skilled professionals play a critical role in delivering high-quality AstuteInfo to our customers.",
     icon: <BadgeCheck className="h-8 w-8 text-white" />,

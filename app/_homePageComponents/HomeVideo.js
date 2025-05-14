@@ -41,9 +41,9 @@ function HomeVideo({ demoSectionRef }) {
         <div className="max-w-4xl mx-auto">
           <iframe
             className="w-full h-96 rounded-2xl"
-            src="https://www.youtube.com/embed/kNXOCsL9OF8?si=XUl-WBBviDB5uitb"
-            title="See how AI is transforming financial services"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;fullscreen"
+            src="https://www.youtube.com/embed/LLaMK9vCzzo?si=-AHOmFPHhjkQy2e7"
+            title="AstuteInfo AI Finance presentation"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
             referrerPolicy="strict-origin-when-cross-origin"
           ></iframe>
         </div>

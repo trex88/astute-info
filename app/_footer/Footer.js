@@ -8,8 +8,8 @@ import {
   LuFacebook,
   LuInstagram,
   LuLinkedin,
-  LuTwitter,
 } from "react-icons/lu";
+import { FaXTwitter } from "react-icons/fa6";
 
 function Footer() {
   return (
@@ -190,26 +190,30 @@ function Footer() {
             {/* Social Media Icons */}
             <div className="flex gap-3">
               <Link
-                href="#"
+                href="https://www.facebook.com/profile.php?id=61575828585288"
                 className="bg-gray-800 hover:bg-primary transition-colors p-2 rounded-lg"
+                target="_blank"
               >
                 <LuFacebook className="h-5 w-5" />
               </Link>
               <Link
-                href="#"
+                href="https://www.instagram.com/astuteinfo"
                 className="bg-gray-800 hover:bg-primary transition-colors p-2 rounded-lg"
+                target="_blank"
               >
                 <LuInstagram className="h-5 w-5" />
               </Link>
               <Link
-                href="#"
+                href="https://x.com/astuteinfo"
                 className="bg-gray-800 hover:bg-primary transition-colors p-2 rounded-lg"
+                target="_blank"
               >
-                <LuTwitter className="h-5 w-5" />
+                <FaXTwitter className="h-5 w-5" />
               </Link>
               <Link
-                href="#"
+                href="https://www.linkedin.com/company/astuteinfo/about/"
                 className="bg-gray-800 hover:bg-primary transition-colors p-2 rounded-lg"
+                target="_blank"
               >
                 <LuLinkedin className="h-5 w-5" />
               </Link>

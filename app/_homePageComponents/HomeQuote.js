@@ -59,7 +59,7 @@ function HomeQuote() {
                 <Users className="h-8 w-8 text-white" />
               </div>
               <div>
-                <p className="font-bold text-white">George Huynh</p>
+                <p className="font-bold text-white">Vance Huynh</p>
                 <p className="text-gray-300">CEO of AstuteInfo</p>
               </div>
             </div>

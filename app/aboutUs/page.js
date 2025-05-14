@@ -16,7 +16,8 @@ import {
   Phone,
   Mail,
 } from "lucide-react";
-import { LuFacebook, LuInstagram, LuLinkedin, LuTwitter } from "react-icons/lu";
+import { LuFacebook, LuInstagram, LuLinkedin } from "react-icons/lu";
+import { FaXTwitter } from "react-icons/fa6";
 
 import Link from "next/link";
 import { useRef } from "react";
@@ -375,34 +376,38 @@ export default function AboutPage() {
             </div>
 
             <div className="flex gap-4">
-              <a
-                href="#"
+              <Link
+                href="https://www.facebook.com/profile.php?id=61575828585288"
                 className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center
                   hover:bg-primary/10 transition-colors"
+                target="_blank"
               >
                 <LuFacebook className="size-5 text-gray-600" />
-              </a>
-              <a
-                href="#"
+              </Link>
+              <Link
+                href="https://www.instagram.com/astuteinfo"
                 className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center
                   hover:bg-primary/10 transition-colors"
+                target="_blank"
               >
                 <LuInstagram className="size-5 text-gray-600" />
-              </a>
-              <a
-                href="#"
+              </Link>
+              <Link
+                href="https://x.com/astuteinfo"
                 className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center
                   hover:bg-primary/10 transition-colors"
+                target="_blank"
               >
-                <LuTwitter className="size-5 text-gray-600" />
-              </a>
-              <a
-                href="#"
+                <FaXTwitter className="size-5 text-gray-600" />
+              </Link>
+              <Link
+                href="https://www.linkedin.com/company/astuteinfo/about/"
                 className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center
                   hover:bg-primary/10 transition-colors"
+                target="_blank"
               >
                 <LuLinkedin className="size-5 text-gray-600" />
-              </a>
+              </Link>
             </div>
           </div>
 
